@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Keuangan Harian</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-wallet"></i> Catatan Keuangan Harian</h1>
+            <div class="saldo-container">
+                <h2>Saldo: <span id="total-saldo">Rp 0</span></h2>
+            </div>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h3><i class="fas fa-plus-circle"></i> Tambah Transaksi</h3>
+                <form id="form-transaksi">
+                    <div class="form-group">
+                        <label for="jenis">Jenis Transaksi:</label>
+                        <select id="jenis" required>
+                            <option value="pemasukan">Pemasukan</option>
+                            <option value="pengeluaran">Pengeluaran</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah">Jumlah (Rp):</label>
+                        <input type="number" id="jumlah" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="keterangan">Keterangan:</label>
+                        <input type="text" id="keterangan" placeholder="Contoh: Gaji bulanan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal:</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <button type="submit"><i class="fas fa-save"></i> Tambah Transaksi</button>
+                </form>
+            </section>
+
+            <section class="daftar-section">
+                <h3><i class="fas fa-list"></i> Daftar Transaksi</h3>
+                <div class="filter-container">
+                    <button id="filter-semua" class="filter-btn active">Semua</button>
+                    <button id="filter-pemasukan" class="filter-btn">Pemasukan</button>
+                    <button id="filter-pengeluaran" class="filter-btn">Pengeluaran</button>
+                </div>
+                <div id="daftar-transaksi" class="daftar-transaksi">
+                    <!-- Daftar transaksi akan ditampilkan di sini -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
